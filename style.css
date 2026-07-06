@@ -1,0 +1,491 @@
+/* ===========================
+GENERAL
+=========================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Arial,Helvetica,sans-serif;
+
+}
+
+body{
+
+background:#f3f3f3;
+
+padding:15px;
+
+}
+
+/* ===========================
+A4 PAGE
+=========================== */
+
+#invoice{
+
+width:210mm;
+
+min-height:297mm;
+
+background:#fff;
+
+margin:auto;
+
+padding:8mm;
+
+border:1px solid #000;
+
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+.invoice-header{
+
+display:flex;
+
+align-items:center;
+
+border:2px solid #000;
+
+padding:10px;
+
+margin-bottom:8px;
+
+}
+
+.header-left{
+
+width:140px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.header-left img{
+
+margin-left: 52px;
+width:190px;
+
+height:160px;
+
+object-fit:contain;
+
+}
+
+.header-right{
+
+flex:1;
+
+text-align:center;
+
+}
+
+.header-right h1{
+font-size:28px;
+color: #2B2B2B;
+font-weight:bold;
+
+margin-bottom:5px;
+
+}
+
+.header-right h6{
+
+font-size:18px;
+font-weight:bold;
+margin-bottom:8px;
+
+}
+
+.header-right p{
+
+margin:2px 0;
+font-weight:bold;
+font-size:14px;
+
+}
+
+
+/* ===========================
+TITLE 2
+=========================== */
+
+.quotation-title-2{
+
+text-align:center;
+
+padding-top: 0px;
+
+margin-bottom:10px;
+margin-top: 0px;
+
+}
+
+.quotation-title-2 h2{
+
+margin:0;
+
+font-size:20px;
+font-weight:bold;
+font-size:20px;
+}
+
+
+
+
+
+
+
+/* ===========================
+TITLE
+=========================== */
+
+.quotation-title{
+
+border:2px solid black;
+
+text-align:center;
+
+padding:6px;
+
+margin-bottom:8px;
+
+}
+
+.quotation-title h2{
+
+margin:0;
+
+font-size:24px;
+
+}
+
+/* ===========================
+CUSTOMER
+=========================== */
+
+.customer-section{
+
+display:flex;
+
+gap:10px;
+
+margin-bottom:8px;
+
+}
+
+.customer-left{
+
+width:60%;
+
+}
+
+.customer-right{
+
+width:40%;
+
+}
+
+.customer-table{
+
+margin:0;
+
+}
+
+.customer-table th{
+
+background:#efefef;
+
+font-size:14px;
+
+}
+
+.customer-table td{
+
+padding:2px;
+
+}
+
+.customer-table input{
+
+border:none;
+
+box-shadow:none;
+
+font-size:14px;
+
+}
+
+/* ===========================
+TABLE
+=========================== */
+
+#itemsTable{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:8px;
+
+}
+
+#itemsTable th{
+
+background:#ececec;
+
+font-size:14px;
+
+text-align:center;
+
+}
+
+#itemsTable td{
+
+padding:3px;
+
+}
+
+#itemsTable input{
+
+border:none;
+
+box-shadow:none;
+
+text-align:center;
+
+font-size:14px;
+
+}
+
+/* ===========================
+SUMMARY
+=========================== */
+
+.summary-section{
+
+margin-top:10px;
+
+}
+
+.summary-section h3{
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#0d6efd;
+
+}
+
+/* ===========================
+SIGNATURE
+=========================== */
+
+.signature-section{
+
+margin-top:50px;
+
+font-size:15px;
+
+}
+
+/* ===========================
+BUTTONS
+=========================== */
+
+.no-print{
+
+margin-top:20px;
+
+}
+
+.btn{
+
+height:52px;
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+/* ===========================
+PDF
+=========================== */
+
+@media print{
+
+body{
+
+background:white;
+
+}
+
+.no-print{
+
+display:none;
+
+}
+
+input{
+
+border:none !important;
+
+background:white !important;
+
+}
+
+button{
+
+display:none;
+
+}
+
+#invoice{
+
+border:none;
+
+width:210mm;
+
+height:297mm;
+
+margin:0;
+
+padding:8mm;
+
+}
+
+}
+
+
+#invoice{
+
+    background:white;
+
+    width:210mm;
+
+    min-height:297mm;
+
+    margin:auto;
+
+    padding:10mm;
+
+}
+
+body{
+
+    background:#efefef;
+
+}
+
+
+.no-print{
+
+    display:block;
+
+}
+
+@media print{
+
+.no-print{
+
+display:none !important;
+
+}
+
+}
+
+
+
+
+.footer-text{
+
+    font-style: italic;
+
+    font-weight: bold;
+
+}
+
+
+
+
+
+
+
+
+
+/* Generate PDF Button */
+
+.pdf-btn-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:30px 0;
+
+}
+
+#generatePDF{
+
+    width:300px;
+
+    height:60px;
+
+    background:#198754;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+}
+
+#generatePDF:hover{
+
+    background:#157347;
+
+    transform:translateY(-2px);
+
+}
+
+
+@media (max-width:768px){
+
+    #generatePDF{
+
+        width:90%;
+
+        max-width:350px;
+
+        height:58px;
+
+        font-size:18px;
+        
+
+    }
+
+}
