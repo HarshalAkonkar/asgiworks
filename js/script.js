@@ -918,25 +918,46 @@ doc.text("• Design or measurement changes after confirmation will be charged e
 
 doc.text("• Balance payment due before or immediately after completion.", 15, summaryY + 25);
 
+
+
 // ======================================
-// SIGNATURES
+// SIGNATURE BOX
 // ======================================
 
-summaryY += 45;
 
+
+// Move only a little below Terms
+summaryY += 10;
+
+// Check if signature box fits on current page
+if (summaryY + 40 > 280) {
+    doc.addPage();
+    summaryY = 20;
+}
+
+
+const boxX = 15;
+const boxY = summaryY;
+
+
+
+
+
+
+// Left Signature Line
+doc.line(boxX + 10, boxY + 45, boxX + 70, boxY + 45);
 doc.setFont("helvetica", "bold");
+doc.text("Customer Signature", boxX + 18, boxY + 52);
 
-doc.line(20, summaryY, 80, summaryY);
-
-doc.text("Customer Signature", 25, summaryY + 6);
-
-doc.line(130, summaryY, 190, summaryY);
-
-doc.text("Authorized Signatory", 140, summaryY + 6);
-
+// Right Company Name
 doc.setFont("helvetica", "normal");
+doc.text("For ANUP STEEL & GLASS INTERIOR", boxX + 102, boxY + 29);
 
-doc.text("For ANUP STEEL & GLASS INTERIOR", 132, summaryY + 14);
+// Right Signature Line
+doc.line(boxX + 100, boxY + 45, boxX + 160, boxY + 45);
+doc.setFont("helvetica", "bold");
+doc.text("Authorized Signatory", boxX + 108, boxY + 52);
+
 
 // ======================================
 // SAVE PDF
@@ -977,7 +998,6 @@ increaseQuotationNumber();
 // Reset button
 pdfBtn.disabled = false;
 pdfBtn.innerHTML = oldText;
-
 
 
 
